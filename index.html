@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JobConnect | Find Your Next Opportunity</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">J</span> JobConnect</a>
+    <nav><a href="#jobs">Find Jobs</a><a href="#how">How it works</a><a href="#post">For Employers</a></nav>
+    <a class="nav-cta" href="#jobs">Explore Jobs</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">YOUR CAREER STARTS HERE</span>
+        <h1>Find a job that<br><em>fits your future.</em></h1>
+        <p>Discover opportunities from growing teams. Search roles, explore details and keep track of your applications — all in one place.</p>
+        <div class="search-panel">
+          <label class="search-field"><span>⌕</span><input id="searchInput" type="search" placeholder="Job title or keyword" /></label>
+          <select id="categoryFilter" aria-label="Filter by category">
+            <option value="">All categories</option>
+            <option>Technology</option><option>Design</option><option>Marketing</option><option>Business</option>
+          </select>
+          <button id="searchBtn">Search jobs</button>
+        </div>
+        <div class="hero-note">Popular: <button class="tag-link" data-search="Frontend">Frontend</button><button class="tag-link" data-search="Python">Python</button><button class="tag-link" data-search="Designer">Designer</button></div>
+      </div>
+      <div class="hero-art">
+        <div class="art-card card-one"><span class="mini-icon">✦</span><div><b>New opportunity</b><small>Product Designer · Remote</small></div><span class="pill">New</span></div>
+        <div class="art-orbit"><div class="orbit-dot">↗</div><div class="orbit-center">JC</div></div>
+        <div class="art-card card-two"><div class="avatar-stack"><i>A</i><i>M</i><i>R</i></div><div><b>Build your future</b><small>One application at a time</small></div></div>
+        <div class="floating-star">✳</div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div><strong>Curated</strong><span>Opportunities</span></div><div><strong>Simple</strong><span>Job discovery</span></div><div><strong>One place</strong><span>Application tracking</span></div>
+    </section>
+
+    <section class="section" id="jobs">
+      <div class="section-heading"><div><span class="eyebrow">OPPORTUNITIES</span><h2>Explore open positions</h2><p>Find a role where you can do your best work.</p></div><span class="result-count" id="resultCount"></span></div>
+      <div class="job-grid" id="jobGrid"></div>
+      <p class="empty-state" id="emptyState" hidden>No jobs match your search. Try another keyword or category.</p>
+    </section>
+
+    <section class="how-section" id="how">
+      <span class="eyebrow">GET STARTED</span><h2>Your next step, made simple.</h2>
+      <div class="steps"><article><b>01</b><h3>Discover</h3><p>Search jobs by role, keyword or category.</p></article><article><b>02</b><h3>Apply</h3><p>Review a role and submit your application.</p></article><article><b>03</b><h3>Track</h3><p>See the jobs you have applied for in one place.</p></article></div>
+    </section>
+
+    <section class="employer" id="post">
+      <div><span class="eyebrow">FOR EMPLOYERS</span><h2>Looking for your next great hire?</h2><p>Share an opportunity with people ready to grow.</p></div>
+      <button id="openPost" class="light-button">Post a job <span>↗</span></button>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#"><span class="brand-mark">J</span> JobConnect</a><span>Connecting people with opportunities.</span><span>© 2026 JobConnect</span></footer>
+
+  <dialog id="jobDialog"><form method="dialog" class="dialog-card"><button class="close" aria-label="Close">×</button><span class="eyebrow" id="dialogCategory"></span><h2 id="dialogTitle"></h2><p id="dialogCompany" class="muted"></p><p id="dialogDescription"></p><div class="dialog-meta" id="dialogMeta"></div><button type="button" id="applyBtn" class="primary-button">Apply for this job</button></form></dialog>
+
+  <dialog id="postDialog"><form id="postForm" class="dialog-card"><button type="button" class="close" id="closePost">×</button><span class="eyebrow">EMPLOYER FORM</span><h2>Post an opportunity</h2><label>Job title<input required name="title" placeholder="e.g. UI Designer"></label><label>Company<input required name="company" placeholder="Company name"></label><label>Category<select name="category"><option>Technology</option><option>Design</option><option>Marketing</option><option>Business</option></select></label><label>Location<input required name="location" placeholder="e.g. Remote"></label><button class="primary-button" type="submit">Publish job</button><p class="form-note">Demo feature: posts are saved in this browser only.</p></form></dialog>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
